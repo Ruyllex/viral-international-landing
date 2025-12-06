@@ -1,0 +1,27 @@
+/* Dark Mode - Footer Text Fixes */
+body.dark-mode footer {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode footer h4 {
+  color: #ffffff;
+}
+
+body.dark-mode footer p,
+body.dark-mode footer a,
+body.dark-mode footer li {
+  color: #cccccc !important;
+}
+
+body.dark-mode footer a:hover {
+  color: var(--cyan);
+}
+
+body.dark-mode .footer_bottom {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .footer_bottom p {
+  color: #999999 !important;
+}

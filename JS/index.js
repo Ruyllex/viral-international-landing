@@ -24,6 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Theme toggle clicked');
       document.body.classList.toggle('dark-mode');
       
+      // Switch hero logo based on theme
+      const heroLogo = document.getElementById('hero-logo');
+      const navbarLogo = document.getElementById('navbar-logo');
+      if (heroLogo) {
+        if (document.body.classList.contains('dark-mode')) {
+          heroLogo.src = 'IMAGES/viral international_blancoi.png';
+        } else {
+          heroLogo.src = 'IMAGES/viral international.png';
+        }
+      }
+      if (navbarLogo) {
+        if (document.body.classList.contains('dark-mode')) {
+          navbarLogo.src = 'IMAGES/viral international_blancoi.png';
+        } else {
+          navbarLogo.src = 'IMAGES/viral international.png';
+        }
+      }
+      
       if (document.body.classList.contains('dark-mode')) {
         sunIcon.style.display = 'none';
         moonIcon.style.display = 'block';
@@ -364,3 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.warn('GSAP or ScrollTrigger not loaded, using fallback animations');
   }
 });
+
+
+

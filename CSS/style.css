@@ -1138,3 +1138,38 @@ body.dark-mode .faq-answer li {
 .pulse-animation {
   animation: pulse 2s ease-in-out infinite;
 }
+/* Dark Mode - Footer Text Fixes */
+body.dark-mode footer {
+  background: #1a1a1a;
+  color: #f5f5f5;
+}
+
+body.dark-mode footer h4 {
+  color: #ffffff;
+}
+
+body.dark-mode footer p,
+body.dark-mode footer a,
+body.dark-mode footer li {
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode footer a:hover {
+  color: var(--cyan);
+}
+
+body.dark-mode .footer_bottom {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .footer_bottom p {
+  color: #d0d0d0 !important;
+}
+
+/* Dark mode - Hero and general text improvements */
+body.dark-mode p { color: #e8e8e8; }
+
+body.dark-mode .hero p,
+body.dark-mode .hero_left p { color: #f0f0f0 !important; }
+
+body.dark-mode section p { color: #e5e5e5; }
