@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viral International | Agencia Global de Marketing</title>
+    <link rel="shortcut icon" href="IMAGES/Positivus_Favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">
+            <img src="IMAGES/viral international.png" alt="Viral International" style="height: 50px; width: auto;">
+        </div>
+        <nav class="nav_list_container">
+            <ul>
+                <li class="list_item"><a href="#about" data-en="About Us" data-es="Sobre Nosotros">Sobre Nosotros</a></li>
+                <li class="list_item"><a href="#services" data-en="Services" data-es="Servicios">Servicios</a></li>
+                <li class="list_item"><a href="#cases" data-en="Case Studies" data-es="Casos de Éxito">Casos de Éxito</a></li>
+                <li class="list_item"><a href="#plans" data-en="Plans" data-es="Planes">Planes</a></li>
+                <li class="list_item"><a href="#contact" class="list_btn" data-en="Request Proposal" data-es="Solicitar Propuesta">Solicitar Propuesta</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon" style="display:none;">🌙</span>
+            </button>
+            <!-- Language Toggle -->
+            <button id="lang-toggle" class="icon-btn" aria-label="Toggle language">
+                <span class="lang-text">EN</span>
+            </button>
+            <!-- Hamburger Menu -->
+            <div class="hamburger_menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- (1) HERO -->
+        <section class="hero" id="home">
+            <div class="hero_left">
+                <div class="badges" style="display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+                    <span style="background:var(--grey); padding:5px 12px; border-radius:20px; font-size:0.9rem;" data-en="⭐ +500 Clients" data-es="⭐ +500 Clientes">⭐ +500 Clientes</span>
+                    <span style="background:var(--grey); padding:5px 12px; border-radius:20px; font-size:0.9rem;" data-en="🚀 Real Results" data-es="🚀 Resultados Reales">🚀 Resultados Reales</span>
+                    <span style="background:var(--grey); padding:5px 12px; border-radius:20px; font-size:0.9rem;" data-en="🌍 International Team" data-es="🌍 Equipo Internacional">🌍 Equipo Internacional</span>
+                </div>
+                <h1 data-en="Viral International — Global <span class='text-gradient'>Digital Marketing</span> Agency & Real Growth" data-es="Viral International — Agencia Global de <span class='text-gradient'>Marketing Digital</span> y Crecimiento Real">Viral International — Agencia Global de <span class="text-gradient">Marketing Digital</span> y Crecimiento Real</h1>
+                <p data-en="We empower brands, creators and businesses with impactful digital strategies, international PR and AI-powered technology." data-es="Impulsamos marcas, creadores y empresas con estrategias digitales de impacto, PR internacional y tecnología impulsada por IA.">Impulsamos marcas, creadores y empresas con estrategias digitales de impacto, PR internacional y tecnología impulsada por IA.</p>
+                <div class="hero_buttons" style="display:flex; gap:1rem; margin-top:2rem;">
+                    <a href="#contact" class="hero_button bg-black" data-en="Request Proposal" data-es="Solicitar propuesta">Solicitar propuesta</a>
+                    <a href="https://wa.me/" target="_blank" class="hero_button" style="background:transparent; color:var(--black);" data-en="Chat on WhatsApp" data-es="Hablar por WhatsApp">Hablar por WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero_right">
+                <!-- Viral International Logo -->
+                <div style="width:100%; height:400px; display:flex; align-items:center; justify-content:center; padding:3rem;">
+                    <img src="IMAGES/viral international.png" alt="Viral International" style="max-width:90%; height:auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- CLIENT LOGOS CAROUSEL -->
+        <section class="client_row_container">
+            <div class="client_row">
+                <img src="IMAGES/amazon_logo.webp" alt="Amazon">
+                <img src="IMAGES/dribble_logo.webp" alt="Dribbble">
+                <img src="IMAGES/hubspot_logo.webp" alt="HubSpot">
+                <img src="IMAGES/notion_logo.webp" alt="Notion">
+                <img src="IMAGES/netflix_logo.webp" alt="Netflix">
+                <img src="IMAGES/zoom_logo.webp" alt="Zoom">
+                <!-- Duplicate for infinite scroll -->
+                <img src="IMAGES/amazon_logo.webp" alt="Amazon">
+                <img src="IMAGES/dribble_logo.webp" alt="Dribbble">
+                <img src="IMAGES/hubspot_logo.webp" alt="HubSpot">
+                <img src="IMAGES/notion_logo.webp" alt="Notion">
+                <img src="IMAGES/netflix_logo.webp" alt="Netflix">
+                <img src="IMAGES/zoom_logo.webp" alt="Zoom">
+            </div>
+        </section>
+
+        <!-- (2) SOBRE NOSOTROS -->
+        <section class="about section-padding" id="about" style="padding: 6rem 0;">
+            <div class="section-header">
+                <h3 data-en="About Us" data-es="Sobre Nosotros">Sobre Nosotros</h3>
+                <p data-en="We are more than an agency, we are your global growth partner." data-es="Somos más que una agencia, somos tu socio de crecimiento global.">Somos más que una agencia, somos tu socio de crecimiento global.</p>
+            </div>
+            <div class="about-content" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem;">
+                <div class="about-text">
+                    <h4 style="margin-bottom:1rem;" data-en="Our Story" data-es="Nuestra Historia">Nuestra Historia</h4>
+                    <p style="margin-bottom:2rem;" data-en="We were born with the mission to democratize digital success. Since our inception, we have helped hundreds of brands scale their online presence through proven strategies and cutting-edge technology." data-es="Nacimos con la misión de democratizar el éxito digital. Desde nuestros inicios, hemos ayudado a cientos de marcas a escalar su presencia online mediante estrategias probadas y tecnología de punta.">Nacimos con la misión de democratizar el éxito digital. Desde nuestros inicios, hemos ayudado a cientos de marcas a escalar su presencia online mediante estrategias probadas y tecnología de punta.</p>
+                    
+                    <h4 style="margin-bottom:1rem;" data-en="Mission & Vision" data-es="Misión & Visión">Misión & Visión</h4>
+                    <p style="margin-bottom:2rem;" data-en="Our mission is to empower voices and businesses in the digital age. We envision a world where organic growth and brand authority are accessible to those with a great story to tell." data-es="Nuestra misión es potenciar voces y negocios en la era digital. Visualizamos un mundo donde el crecimiento orgánico y la autoridad de marca son accesibles para quienes tienen una gran historia que contar.">Nuestra misión es potenciar voces y negocios en la era digital. Visualizamos un mundo donde el crecimiento orgánico y la autoridad de marca son accesibles para quienes tienen una gran historia que contar.</p>
+                    
+                    <h4 style="margin-bottom:1rem;" data-en="Values" data-es="Valores">Valores</h4>
+                    <ul style="list-style:none; display:flex; gap:1rem; flex-wrap:wrap;">
+                        <li style="background:var(--grey); padding:0.5rem 1rem; border-radius:10px;" data-en="Transparency" data-es="Transparencia">Transparencia</li>
+                        <li style="background:var(--grey); padding:0.5rem 1rem; border-radius:10px;" data-en="Innovation" data-es="Innovación">Innovación</li>
+                        <li style="background:var(--grey); padding:0.5rem 1rem; border-radius:10px;" data-en="Results" data-es="Resultados">Resultados</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div style="width:100%; height:100%; background:var(--dark-grey); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; min-height:300px;">
+                        <span style="color:var(--grey);" data-en="[Team Photo / Corporate]" data-es="[Foto de Equipo / Corporativa]">[Foto de Equipo / Corporativa]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- (3) SERVICIOS PRINCIPALES -->
+        <section class="services section-padding" id="services" style="padding: 6rem 0;">
+            <div class="section-header">
+                <h3 class="bg-black text-white" style="background:var(--black); color:var(--white);">Nuestros Servicios</h3>
+                <p>Soluciones integrales para dominar el panorama digital.</p>
+            </div>
+            <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
+                <!-- Service Items -->
+                <div class="service-box"><h4>Crecimiento Orgánico Real</h4><p>Estrategias sin bots, solo audiencia real.</p></div>
+                <div class="service-box"><h4>PR & Notas de Prensa</h4><p>Aparición en medios verificados globales.</p></div>
+                <div class="service-box"><h4>Verificación de Cuentas</h4><p>Obtén el check azul en IG, FB, TikTok.</p></div>
+                <div class="service-box"><h4>Community Manager</h4><p>Gestión profesional de tu comunidad.</p></div>
+                <div class="service-box"><h4>Gestión de RRSS</h4><p>Calendarios, posting y análisis.</p></div>
+                <div class="service-box"><h4>Diseño Gráfico</h4><p>Identidad visual de alto impacto.</p></div>
+                <div class="service-box"><h4>Edición de Reels</h4><p>Contenido viral optimizado para retención.</p></div>
+                <div class="service-box"><h4>Branding</h4><p>Desarrollo de marca y narrativa.</p></div>
+                <div class="service-box" style="background:var(--black); color:var(--white);">
+                    <h4 class="text-gradient">Boost AI</h4>
+                    <p style="color:#ccc;">Nuestra tecnología propietaria de impulso.</p>
+                </div>
+                <div class="service-box"><h4>Artículos en Wikipedia</h4><p>Creación y gestión de páginas wiki.</p></div>
+                <div class="service-box"><h4>Servicios para Hoteles</h4><p>Marketing especializado en turismo.</p></div>
+                <div class="service-box"><h4>Estrategias de Engagement</h4><p>Grupos de participación exclusivos.</p></div>
+                <div class="service-box"><h4>Influencer Marketing</h4><p>Conexión con creadores top.</p></div>
+                <div class="service-box"><h4>Campañas Globales</h4><p>Alcance internacional masivo.</p></div>
+                <div class="service-box"><h4>Consultoría Privada</h4><p>Asesoría 1 a 1 para líderes.</p></div>
+            </div>
+        </section>
+
+        <!-- (4) METODOLOGÍA -->
+        <section class="methodology section-padding" id="methodology" style="padding: 6rem 0;">
+             <div class="section-header">
+                <h3>Metodología</h3>
+                <p>Nuestro proceso probado para el éxito.</p>
+            </div>
+            <div class="process-steps" style="display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
+                <div class="step-card"><h1>01</h1><h3>Auditoría</h3><p>Analizamos tu estado actual.</p></div>
+                <div class="step-card"><h1>02</h1><h3>Estrategia</h3><p>Diseñamos el plan de acción.</p></div>
+                <div class="step-card"><h1>03</h1><h3>Ejecución</h3><p>Implementamos con precisión.</p></div>
+                <div class="step-card"><h1>04</h1><h3>Optimización</h3><p>Mejoramos basándonos en datos.</p></div>
+                <div class="step-card"><h1>05</h1><h3>Reportes</h3><p>Resultados claros y transparentes.</p></div>
+            </div>
+        </section>
+
+        <!-- (5) ESTADÍSTICAS -->
+        <section class="stats" style="padding: 4rem 0; background:var(--black); color:var(--white); border-radius:var(--radius-lg); margin-bottom:6rem;">
+            <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:2rem; text-align:center;">
+                <div class="stat-item">
+                    <h2 class="text-cyan" style="font-size:3rem;">+500</h2>
+                    <p>Cuentas Verificadas</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="text-violet" style="font-size:3rem;">+1.2k</h2>
+                    <p>Notas de Prensa</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="text-cyan" style="font-size:3rem;">+800</h2>
+                    <p>Clientes Activos</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="text-violet" style="font-size:3rem;">+50M</h2>
+                    <p>Alcance Orgánico</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- (6) CASOS DE ÉXITO -->
+        <section class="cases section-padding" id="cases" style="padding: 6rem 0;">
+            <div class="section-header">
+                <h3>Casos de Éxito</h3>
+                <p>Resultados que hablan por sí mismos.</p>
+            </div>
+            <div class="cases-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+                <!-- Case Items -->
+                <div class="case-card">
+                    <div style="background:var(--grey); height:200px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">[IMG Crecimiento]</div>
+                    <div style="padding:1.5rem;">
+                        <h4>Crecimiento Real</h4>
+                        <p>De 0 a 100k seguidores en 6 meses para marca de moda.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div style="background:var(--grey); height:200px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">[IMG Prensa]</div>
+                    <div style="padding:1.5rem;">
+                        <h4>Prensa Internacional</h4>
+                        <p>Cobertura en Forbes y Entrepreneur para startup tech.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div style="background:var(--grey); height:200px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">[IMG Verificación]</div>
+                    <div style="padding:1.5rem;">
+                        <h4>Verificación</h4>
+                        <p>Check azul obtenido para artista internacional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- (7) TESTIMONIOS -->
+        <section class="testimonials section-padding" style="padding: 6rem 0; background:var(--grey); border-radius:var(--radius-lg);">
+            <div class="section-header" style="flex-direction:column; text-align:center;">
+                <h3>Lo que dicen nuestros clientes</h3>
+                <p>Confianza construida con resultados.</p>
+            </div>
+            <div class="testimonial-slider" style="display:flex; gap:2rem; overflow-x:auto; padding-bottom:2rem;">
+                <div class="testimonial-card" style="background:var(--white); padding:2rem; border-radius:var(--radius-md); min-width:300px;">
+                    <p>"Increíble servicio. Lograron verificar mi cuenta en tiempo récord."</p>
+                    <div style="margin-top:1rem; font-weight:bold;">- Cliente Confidencial</div>
+                </div>
+                 <div class="testimonial-card" style="background:var(--white); padding:2rem; border-radius:var(--radius-md); min-width:300px;">
+                    <p>"El impacto en nuestras ventas fue inmediato tras la campaña de PR."</p>
+                    <div style="margin-top:1rem; font-weight:bold;">- CEO Startup Fintech</div>
+                </div>
+                 <div class="testimonial-card" style="background:var(--white); padding:2rem; border-radius:var(--radius-md); min-width:300px;">
+                    <p>"La herramienta Boost AI es un diferenciador total. Muy recomendados."</p>
+                    <div style="margin-top:1rem; font-weight:bold;">- Directora de Marketing</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- (8) TECNOLOGÍA / BOOST AI -->
+        <section class="tech section-padding" id="tech" style="padding: 6rem 0;">
+            <div style="background:var(--black); color:var(--white); padding:4rem; border-radius:var(--radius-lg); display:flex; align-items:center; gap:4rem;">
+                <div style="flex:1;">
+                    <h3 class="text-gradient" style="font-size:2.5rem; margin-bottom:1rem;">Boost AI Technology</h3>
+                    <p style="margin-bottom:2rem; font-size:1.1rem; color:#ccc;">Nuestra IA propietaria analiza tendencias en tiempo real para optimizar tu contenido y maximizar el alcance orgánico. Deja de adivinar y empieza a crecer con datos.</p>
+                    <ul style="list-style:none; margin-bottom:2rem;">
+                        <li style="margin-bottom:0.5rem;">✅ Análisis predictivo de tendencias</li>
+                        <li style="margin-bottom:0.5rem;">✅ Optimización de hashtags automática</li>
+                        <li style="margin-bottom:0.5rem;">✅ Reportes de rendimiento en vivo</li>
+                    </ul>
+                    <a href="#contact" class="hero_button" style="background:var(--white); color:var(--black); border:none;">Descubrir Boost AI</a>
+                </div>
+                <div style="flex:1;">
+                    <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:var(--radius-md); height:300px; display:flex; align-items:center; justify-content:center;">
+                        [AI Dashboard Mockup]
+```
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq section-padding" id="faq" style="padding: 6rem 0;">
+            <div class="section-header">
+                <h3 data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes">Preguntas Frecuentes</h3>
+                <p data-en="Everything you need to know about our services" data-es="Todo lo que necesitas saber sobre nuestros servicios">Todo lo que necesitas saber sobre nuestros servicios</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ items will be added by JavaScript to keep HTML cleaner -->
+            </div>
+        </section>
+
+        <!-- (9) PLANES -->
+        <section class="plans section-padding" id="plans" style="padding: 6rem 0;">
+            <div class="section-header">
+                <h3>Planes a tu medida</h3>
+                <p>Escala tu negocio con la solución perfecta.</p>
+            </div>
+             <div class="plans-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem;">
+                <!-- Basic -->
+                <div class="plan-card" style="border:1px solid var(--border-color); padding:2rem; border-radius:var(--radius-md);">
+                    <h3>Básico</h3>
+                    <p style="font-size:2rem; font-weight:bold; margin:1rem 0;">$Consultar</p>
+                    <ul style="margin-bottom:2rem; list-style:none;">
+                        <li>Gestión de 1 Red Social</li>
+                        <li>Diseño Básico</li>
+                        <li>Soporte Email</li>
+                    </ul>
+                    <a href="#contact" class="list_btn" style="display:block; text-align:center;">Elegir Plan</a>
+                </div>
+                <!-- Pro -->
+                <div class="plan-card" style="border:2px solid var(--violet); padding:2rem; border-radius:var(--radius-md); position:relative;">
+                    <div style="position:absolute; top:-10px; right:20px; background:var(--violet); color:white; padding:2px 10px; border-radius:10px; font-size:0.8rem;">Recomendado</div>
+                    <h3>Profesional</h3>
+                    <p style="font-size:2rem; font-weight:bold; margin:1rem 0;">$Consultar</p>
+                    <ul style="margin-bottom:2rem; list-style:none;">
+                        <li>Gestión de 3 Redes Sociales</li>
+                        <li>Contenido Reels/TikTok</li>
+                        <li>Estrategia de Crecimiento</li>
+                        <li>Soporte Prioritario</li>
+                    </ul>
+                    <a href="#contact" class="hero_button" style="display:block; text-align:center; width:100%;">Elegir Plan</a>
+                </div>
+                <!-- Enterprise -->
+                <div class="plan-card" style="border:1px solid var(--border-color); padding:2rem; border-radius:var(--radius-md);">
+                    <h3>Empresarial</h3>
+                    <p style="font-size:2rem; font-weight:bold; margin:1rem 0;">$Consultar</p>
+                    <ul style="margin-bottom:2rem; list-style:none;">
+                        <li>Todas las Redes</li>
+                        <li>PR & Prensa</li>
+                        <li>Boost AI Access</li>
+                        <li>Gerente de Cuenta Dedicado</li>
+                    </ul>
+                    <a href="#contact" class="list_btn" style="display:block; text-align:center;">Elegir Plan</a>
+                </div>
+             </div>
+        </section>
+
+        <!-- (10) CONTACTO -->
+        <section class="contact section-padding" id="contact" style="padding: 6rem 0;">
+            <div class="c_t_a" style="background:var(--grey); flex-direction:column; align-items:stretch; gap:4rem;">
+                <div style="text-align:center;">
+                    <h3>Hablemos de tu próximo gran hito</h3>
+                    <p>Completa el formulario y te contactaremos en menos de 24hs.</p>
+                </div>
+                <form action="#" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:800px; margin:0 auto;">
+                    <input type="text" placeholder="Nombre" style="padding:1rem; border-radius:var(--radius-md); border:1px solid #ccc; width:100%;">
+                    <input type="email" placeholder="Email" style="padding:1rem; border-radius:var(--radius-md); border:1px solid #ccc; width:100%;">
+                    <input type="text" placeholder="Empresa" style="padding:1rem; border-radius:var(--radius-md); border:1px solid #ccc; width:100%;">
+                    <input type="text" placeholder="País" style="padding:1rem; border-radius:var(--radius-md); border:1px solid #ccc; width:100%;">
+                    <select style="padding:1rem; border-radius:var(--radius-md); border:1px solid #ccc; width:100%; grid-column:span 2;">
+                        <option value="">Selecciona tu necesidad</option>
+                        <option value="growth">Crecimiento Orgánico</option>
+                        <option value="pr">PR y Prensa</option>
+                        <option value="verification">Verificación</option>
+                        <option value="other">Otro</option>
+                    </select>
+                    <textarea placeholder="Mensaje" rows="4" style="padding:1rem; border-radius:var(--radius-md); border:1px solid #ccc; width:100%; grid-column:span 2;"></textarea>
+                    <button type="submit" class="hero_button" style="grid-column:span 2; width:100%;">Enviar Mensaje</button>
+                    <div style="grid-column:span 2; text-align:center; margin-top:1rem;">
+                        <p>O contáctanos directamente:</p>
+                        <div style="display:flex; justify-content:center; gap:2rem; margin-top:1rem;">
+                            <a href="#" style="display:flex; align-items:center; gap:0.5rem;">📱 WhatsApp</a>
+                            <a href="mailto:viralinternationalus@gmail.com" style="display:flex; align-items:center; gap:0.5rem;" data-en="📧 viralinternationalus@gmail.com" data-es="📧 viralinternationalus@gmail.com">📧 viralinternationalus@gmail.com</a>
+                        </div>
+                        <p style="margin-top:1rem; font-size:0.9rem; color:#666;">📍 Buenos Aires, Argentina</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_content" style="max-width: 1200px; margin: 0 auto;">
+            <!-- Top Section -->
+            <div class="footer_top" style="display:grid; grid-template-columns: 2fr 1fr 1fr; gap:3rem; margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid #333;">
+                <div class="footer_about">
+                    <img src="IMAGES/viral international.png" alt="Viral International" style="height: 40px; margin-bottom: 1rem;">
+                    <p data-en="Specialists in organic growth, branding, PR, verification, AI and high-performance digital strategies." data-es="Especialistas en crecimiento orgánico, branding, PR, verificación, IA y estrategias digitales de alto rendimiento.">
+                        Especialistas en crecimiento orgánico, branding, PR, verificación, IA y estrategias digitales de alto rendimiento.
+                    </p>
+                </div>
+                
+                <div class="footer_links">
+                    <h4 data-en="Useful Sections" data-es="Secciones útiles" style="margin-bottom:1rem;">Secciones útiles</h4>
+                    <ul class="footer_nav_list" style="list-style:none; padding:0;">
+                        <li><a href="#home" data-en="Home" data-es="Inicio">Inicio</a></li>
+                        <li><a href="#services" data-en="Services" data-es="Servicios">Servicios</a></li>
+                        <li><a href="#cases" data-en="Portfolio" data-es="Portafolio">Portafolio</a></li>
+                        <li><a href="#about" data-en="About Us" data-es="Sobre Nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#faq" data-en="FAQ" data-es="Preguntas Frecuentes">Preguntas Frecuentes</a></li>
+                        <li><a href="#contact" data-en="Contact" data-es="Contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer_social">
+                    <h4 data-en="Social Media" data-es="Redes sociales" style="margin-bottom:1rem;">Redes sociales</h4>
+                    <div class="footer_social_icons" style="display:flex; flex-direction:column; gap:0.5rem;">
+                        <a href="#" target="_blank">Instagram</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="https://wa.me/" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="footer_bottom" style="text-align:center;">
+                <p class="copyright" data-en="© 2025 Viral International. All rights reserved." data-es="© 2025 Viral International. Todos los derechos reservados.">
+                    © 2025 Viral International. Todos los derechos reservados.
+                </p>
+                <p style="margin-top:0.5rem; color:#999;" data-en="Location: Argentina – Global operation." data-es="Ubicación: Argentina – Operación global.">
+                    Ubicación: Argentina – Operación global.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="JS/index.js"></script>
+</body>
+</html>
