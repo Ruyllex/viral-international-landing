@@ -715,62 +715,117 @@ footer {
 
 .faq-item {
   background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .faq-item:hover {
   border-color: var(--violet);
+  box-shadow: 0 4px 16px rgba(127, 0, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.faq-item.active {
+  border-color: var(--violet);
+  box-shadow: 0 8px 24px rgba(127, 0, 255, 0.2);
 }
 
 .faq-question {
-  padding: 1.5rem;
+  padding: 1.75rem 2rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   user-select: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.faq-question::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, var(--violet), var(--cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-item:hover .faq-question::before,
+.faq-item.active .faq-question::before {
+  opacity: 1;
 }
 
 .faq-question:hover {
   background: var(--grey);
+  padding-left: 2.5rem;
+}
+
+.faq-item.active .faq-question {
+  background: linear-gradient(90deg, rgba(127, 0, 255, 0.05), transparent);
+  padding-left: 2.5rem;
 }
 
 body.dark-mode .faq-question:hover {
   background: rgba(255,255,255,0.05);
 }
 
+body.dark-mode .faq-item.active .faq-question {
+  background: linear-gradient(90deg, rgba(127, 0, 255, 0.1), transparent);
+}
+
 .faq-icon {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
+  font-size: 1.75rem;
+  font-weight: 300;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--violet);
+  min-width: 30px;
+  text-align: center;
+  line-height: 1;
 }
 
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
+  color: var(--cyan);
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 1.5rem;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+  padding: 0 2rem;
 }
 
 .faq-item.active .faq-answer {
   max-height: 1000px;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 2rem 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .faq-answer p {
   color: #666;
   line-height: 1.8;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  font-size: 1.05rem;
 }
 
 body.dark-mode .faq-answer p {
@@ -789,4 +844,297 @@ body.dark-mode .faq-answer p {
 
 body.dark-mode .faq-answer li {
   color: #ccc;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .faq-question:hover,
+  .faq-item.active .faq-question {
+    padding-left: 2rem;
+  }
+  
+  .faq-answer {
+    padding: 0 1.5rem;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+  }
+  
+  .faq-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE - NAVBAR & FOOTER
+   ======================================== */
+
+@media (max-width: 992px) {
+  /* Header / Navbar */
+  header {
+    padding: 1rem 2rem;
+  }
+  
+  .logo img {
+    height: 35px !important;
+  }
+  
+  .nav_list_container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-color);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    border-left: 3px solid var(--violet);
+  }
+  
+  .nav_list_container.active {
+    right: 0;
+  }
+  
+  .nav_list_container ul {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .list_item {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .list_item a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    display: block;
+  }
+  
+  .list_btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .hamburger_menu {
+    display: flex;
+    z-index: 1000;
+  }
+  
+  .header-controls {
+    gap: 1rem;
+  }
+  
+  .icon-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  .footer_content {
+    padding: 0 1.5rem;
+  }
+  
+  .footer_top {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+  
+  .footer_about img {
+    margin: 0 auto 1rem;
+  }
+  
+  .footer_links h4,
+  .footer_social h4 {
+    margin-bottom: 1rem;
+  }
+  
+  .footer_nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .footer_social_icons {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smaller mobile adjustments */
+  header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .logo img {
+    height: 30px !important;
+  }
+  
+  .nav_list_container {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .header-controls {
+    gap: 0.5rem;
+  }
+  
+  .icon-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Footer */
+  .footer_content {
+    padding: 0 1rem;
+  }
+  
+  .footer_about p {
+    font-size: 0.95rem;
+  }
+  
+  .footer_bottom p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small devices */
+  header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .logo img {
+    height: 28px !important;
+  }
+  
+  .hamburger_menu .bar {
+    width: 25px;
+    height: 2.5px;
+  }
+  
+  .icon-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .footer_about p {
+    font-size: 0.9rem;
+  }
+  
+  .footer_nav_list li a,
+  .footer_social_icons a {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+/* Base state for animated elements - GSAP handles initial state */
+.scroll-reveal {
+  /* opacity: 0; */
+  /* transform: translateY(30px); */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade in from left - GSAP handles initial state */
+.fade-in-left {
+  /* opacity: 0; */
+  /* transform: translateX(-50px); */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in from right - GSAP handles initial state */
+.fade-in-right {
+  /* opacity: 0; */
+  /* transform: translateX(50px); */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale up animation - GSAP handles initial state */
+.scale-up {
+  /* opacity: 0; */
+  /* transform: scale(0.9); */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-up.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger animation for children - GSAP handles initial state */
+.stagger-children > * {
+  /* opacity: 0; */
+  /* transform: translateY(20px); */
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.6s; }
+.stagger-children.revealed > *:nth-child(7) { transition-delay: 0.7s; }
+.stagger-children.revealed > *:nth-child(8) { transition-delay: 0.8s; }
+
+.stagger-children.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating animation for hero elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for CTAs */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
 }

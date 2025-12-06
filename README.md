@@ -1,53 +1,87 @@
-# Positivus
+# Viral International - Landing Page
 
-Positivus is a forward-thinking digital marketing agency dedicated to navigating the digital landscape for success; helping businesses grow and succeed online through a range of services.
+Agencia global de marketing digital especializada en crecimiento orgánico, verificación, PR y branding.
 
----
+## 🚀 Deploy en Vercel
 
-# Table of Contents
+Este proyecto está listo para deployar en Vercel.
 
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [License](#license)
-5. [Figma Design](#figma-design)
+### Opción 1: Deploy desde GitHub (Recomendado)
 
-## Features
+1. **Sube el proyecto a GitHub:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit - Viral International Landing Page"
+   git branch -M main
+   git remote add origin https://github.com/TU_USUARIO/viral-international.git
+   git push -u origin main
+   ```
 
-- **Responsive Design**: Fully responsive layout that adapts to different screen sizes, including desktops, tablets, and mobile devices. Smooth Scrolling: Implemented smooth scrolling for easy navigation between sections.
+2. **Conecta con Vercel:**
+   - Ve a [vercel.com](https://vercel.com)
+   - Click en "Add New Project"
+   - Importa tu repositorio de GitHub
+   - Vercel detectará automáticamente que es un sitio estático
+   - Click en "Deploy"
 
-- **Mobile Menu**: A user-friendly hamburger menu that allows seamless navigation on mobile devices.
+### Opción 2: Deploy directo con Vercel CLI
 
-- **Form Validation**: Includes proper form validation for user inputs with error messages displayed when inputs are invalid. Loading Spinner: Displays a loading spinner while processing form submissions.
+1. **Instala Vercel CLI:**
+   ```bash
+   npm install -g vercel
+   ```
 
-## Installation
+2. **Deploy:**
+   ```bash
+   cd c:/Users/ruymo/programacion/positivus-landing-page-main
+   vercel
+   ```
 
-To set up the project locally, follow these steps:
+3. **Sigue las instrucciones:**
+   - Login con tu cuenta
+   - Confirma el proyecto
+   - Deploy automático
 
-1. Clone the repository:
+### Opción 3: Deploy manual (Drag & Drop)
 
-```bash
-git clone https://github.com/okhuaroboosayuki/positivus-landing-page.git
+1. Ve a [vercel.com/new](https://vercel.com/new)
+2. Arrastra la carpeta del proyecto
+3. Vercel lo deployará automáticamente
+
+## 📁 Estructura del Proyecto
+
+```
+positivus-landing-page-main/
+├── CSS/
+│   └── style.css
+├── IMAGES/
+│   └── (logos, iconos, etc.)
+├── JS/
+│   └── index.js
+├── index.html
+└── package.json
 ```
 
-2. Navigate into the project directory:
+## ✨ Características
 
-```bash
-cd positivus-landing-page
-```
+- ✅ Diseño responsive (móvil, tablet, desktop)
+- ✅ Animaciones GSAP con ScrollTrigger
+- ✅ Dark/Light mode toggle
+- ✅ Cambio de idioma ES/EN
+- ✅ FAQ accordion
+- ✅ Formulario de contacto
+- ✅ Logo carousel
+- ✅ SEO optimizado
 
-3. Open the `index.html` file in your preferred web browser to view the application.
+## 🌐 Tecnologías
 
-## Usage
+- HTML5
+- CSS3 (Variables CSS, Grid, Flexbox)
+- JavaScript (ES6+)
+- GSAP 3.12.5 + ScrollTrigger
+- CDN para librerías externas
 
-- Open the application in your browser.
-- Navigate through the sections using the header links or the mobile hamburger menu.
-- Fill out the contact form and submit it to see the validation and loading spinner in action.
+## 📧 Contacto
 
-## License
-
-This project is licensed under the GNU General Public License. See the [LICENSE File](/LICENSE) for details.
-
-## Figma Design
-
-View the design mockups and prototypes on Figma: [Link](<https://www.figma.com/design/2fxc7axu1RfGZ6NbaPmXeW/Positivus-Landing-Page-Design-(Community)>)
+Email: viralinternationalus@gmail.com

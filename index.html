@@ -6,6 +6,10 @@
     <title>Viral International | Agencia Global de Marketing</title>
     <link rel="shortcut icon" href="IMAGES/Positivus_Favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="CSS/style.css" />
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -46,17 +50,19 @@
         <!-- (1) HERO -->
         <section class="hero" id="home">
             <div class="hero_left">
-                <div class="badges" style="display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-                    <span style="background:var(--grey); padding:5px 12px; border-radius:20px; font-size:0.9rem;" data-en="⭐ +500 Clients" data-es="⭐ +500 Clientes">⭐ +500 Clientes</span>
-                    <span style="background:var(--grey); padding:5px 12px; border-radius:20px; font-size:0.9rem;" data-en="🚀 Real Results" data-es="🚀 Resultados Reales">🚀 Resultados Reales</span>
-                    <span style="background:var(--grey); padding:5px 12px; border-radius:20px; font-size:0.9rem;" data-en="🌍 International Team" data-es="🌍 Equipo Internacional">🌍 Equipo Internacional</span>
+                <h1 data-en="We elevate your brand to the level it deserves." data-es="Impulsamos tu marca al nivel que merece.">
+                    Impulsamos tu marca al nivel que merece.
+                </h1>
+                <p style="font-size:1.2rem; margin:2rem 0; line-height:1.8;" data-en="Digital marketing, organic growth, verification, PR and branding for brands seeking real results and global presence." data-es="Marketing digital, crecimiento orgánico, verificación, PR y branding para marcas que buscan resultados reales y presencia global.">
+                    Marketing digital, crecimiento orgánico, verificación, PR y branding para marcas que buscan resultados reales y presencia global.
+                </p>
+                <div class="hero_buttons" style="display:flex; gap:1rem; margin:2rem 0; flex-wrap:wrap;">
+                    <a href="https://wa.me/5491130652655" target="_blank" class="hero_button bg-black" data-en="Talk to an advisor" data-es="Hablar con un asesor">Hablar con un asesor</a>
+                    <a href="#services" class="hero_button" style="background:transparent; color:var(--black); border:2px solid var(--black);" data-en="View services" data-es="Ver servicios">Ver servicios</a>
                 </div>
-                <h1 data-en="Viral International — Global <span class='text-gradient'>Digital Marketing</span> Agency & Real Growth" data-es="Viral International — Agencia Global de <span class='text-gradient'>Marketing Digital</span> y Crecimiento Real">Viral International — Agencia Global de <span class="text-gradient">Marketing Digital</span> y Crecimiento Real</h1>
-                <p data-en="We empower brands, creators and businesses with impactful digital strategies, international PR and AI-powered technology." data-es="Impulsamos marcas, creadores y empresas con estrategias digitales de impacto, PR internacional y tecnología impulsada por IA.">Impulsamos marcas, creadores y empresas con estrategias digitales de impacto, PR internacional y tecnología impulsada por IA.</p>
-                <div class="hero_buttons" style="display:flex; gap:1rem; margin-top:2rem;">
-                    <a href="#contact" class="hero_button bg-black" data-en="Request Proposal" data-es="Solicitar propuesta">Solicitar propuesta</a>
-                    <a href="https://wa.me/" target="_blank" class="hero_button" style="background:transparent; color:var(--black);" data-en="Chat on WhatsApp" data-es="Hablar por WhatsApp">Hablar por WhatsApp</a>
-                </div>
+                <p style="font-size:1.1rem; font-weight:500; margin-top:3rem; font-style:italic; color:#666;" data-en="Your growth should not be by chance. It must be strategy." data-es="Tu crecimiento no debe ser casualidad. Debe ser estrategia.">
+                    Tu crecimiento no debe ser casualidad. Debe ser estrategia.
+                </p>
             </div>
             <div class="hero_right">
                 <!-- Viral International Logo -->
@@ -87,40 +93,34 @@
 
         <!-- (2) SOBRE NOSOTROS -->
         <section class="about section-padding" id="about" style="padding: 6rem 0;">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <h3 data-en="About Us" data-es="Sobre Nosotros">Sobre Nosotros</h3>
                 <p data-en="We are more than an agency, we are your global growth partner." data-es="Somos más que una agencia, somos tu socio de crecimiento global.">Somos más que una agencia, somos tu socio de crecimiento global.</p>
             </div>
-            <div class="about-content" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem;">
-                <div class="about-text">
-                    <h4 style="margin-bottom:1rem;" data-en="Our Story" data-es="Nuestra Historia">Nuestra Historia</h4>
-                    <p style="margin-bottom:2rem;" data-en="We were born with the mission to democratize digital success. Since our inception, we have helped hundreds of brands scale their online presence through proven strategies and cutting-edge technology." data-es="Nacimos con la misión de democratizar el éxito digital. Desde nuestros inicios, hemos ayudado a cientos de marcas a escalar su presencia online mediante estrategias probadas y tecnología de punta.">Nacimos con la misión de democratizar el éxito digital. Desde nuestros inicios, hemos ayudado a cientos de marcas a escalar su presencia online mediante estrategias probadas y tecnología de punta.</p>
+            <div class="about-content" style="display:grid; grid-template-columns:1fr; gap:2rem;">
+                <div class="about-text fade-in-left" style="text-align:left;">
+                    <p style="margin-bottom:2rem; line-height:1.9; font-size:1.3rem;" data-en="Viral International is a digital marketing agency with a global focus, born in Argentina and projected to the world. We specialize in boosting the visibility, reputation and growth of brands through advanced strategies of content, engagement, branding, automation and artificial intelligence." data-es="Viral International es una agencia de marketing digital con enfoque global, nacida en Argentina y proyectada al mundo. Nos especializamos en impulsar la visibilidad, reputación y crecimiento de marcas mediante estrategias avanzadas de contenido, engagement, branding, automatización e inteligencia artificial.">
+                        Viral International es una agencia de marketing digital con enfoque global, nacida en Argentina y proyectada al mundo. Nos especializamos en impulsar la visibilidad, reputación y crecimiento de marcas mediante estrategias avanzadas de contenido, engagement, branding, automatización e inteligencia artificial.
+                    </p>
                     
-                    <h4 style="margin-bottom:1rem;" data-en="Mission & Vision" data-es="Misión & Visión">Misión & Visión</h4>
-                    <p style="margin-bottom:2rem;" data-en="Our mission is to empower voices and businesses in the digital age. We envision a world where organic growth and brand authority are accessible to those with a great story to tell." data-es="Nuestra misión es potenciar voces y negocios en la era digital. Visualizamos un mundo donde el crecimiento orgánico y la autoridad de marca son accesibles para quienes tienen una gran historia que contar.">Nuestra misión es potenciar voces y negocios en la era digital. Visualizamos un mundo donde el crecimiento orgánico y la autoridad de marca son accesibles para quienes tienen una gran historia que contar.</p>
+                    <p style="margin-bottom:2rem; line-height:1.9; font-size:1.3rem;" data-en="Our commitment is to deliver real, measurable and sustainable results. Each service adapts to the client's needs, integrating creativity, analysis and technology. We work with companies, influencers, artists, entrepreneurs, hotels and businesses looking to stand out in a competitive market." data-es="Nuestro compromiso es ofrecer resultados reales, medibles y sostenibles. Cada servicio se adapta a las necesidades del cliente, integrando creatividad, análisis y tecnología. Trabajamos con empresas, influencers, artistas, emprendedores, hoteles y negocios que buscan destacar en un mercado competitivo.">
+                        Nuestro compromiso es ofrecer resultados reales, medibles y sostenibles. Cada servicio se adapta a las necesidades del cliente, integrando creatividad, análisis y tecnología. Trabajamos con empresas, influencers, artistas, emprendedores, hoteles y negocios que buscan destacar en un mercado competitivo.
+                    </p>
                     
-                    <h4 style="margin-bottom:1rem;" data-en="Values" data-es="Valores">Valores</h4>
-                    <ul style="list-style:none; display:flex; gap:1rem; flex-wrap:wrap;">
-                        <li style="background:var(--grey); padding:0.5rem 1rem; border-radius:10px;" data-en="Transparency" data-es="Transparencia">Transparencia</li>
-                        <li style="background:var(--grey); padding:0.5rem 1rem; border-radius:10px;" data-en="Innovation" data-es="Innovación">Innovación</li>
-                        <li style="background:var(--grey); padding:0.5rem 1rem; border-radius:10px;" data-en="Results" data-es="Resultados">Resultados</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <div style="width:100%; height:100%; background:var(--dark-grey); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; min-height:300px;">
-                        <span style="color:var(--grey);" data-en="[Team Photo / Corporate]" data-es="[Foto de Equipo / Corporativa]">[Foto de Equipo / Corporativa]</span>
-                    </div>
+                    <p style="font-weight:600; font-size:1.4rem; background:linear-gradient(135deg, var(--violet), var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;" data-en="At Viral International, your brand doesn't just grow: it transforms." data-es="En Viral International, tu marca no solo crece: se transforma.">
+                        En Viral International, tu marca no solo crece: se transforma.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- (3) SERVICIOS PRINCIPALES -->
         <section class="services section-padding" id="services" style="padding: 6rem 0;">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <h3 class="bg-black text-white" style="background:var(--black); color:var(--white);">Nuestros Servicios</h3>
                 <p>Soluciones integrales para dominar el panorama digital.</p>
             </div>
-            <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
+            <div class="services-grid stagger-children" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
                 <!-- Service Items -->
                 <div class="service-box"><h4>Crecimiento Orgánico Real</h4><p>Estrategias sin bots, solo audiencia real.</p></div>
                 <div class="service-box"><h4>PR & Notas de Prensa</h4><p>Aparición en medios verificados globales.</p></div>
@@ -187,24 +187,30 @@
                 <p>Resultados que hablan por sí mismos.</p>
             </div>
             <div class="cases-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
-                <!-- Case Items -->
-                <div class="case-card">
-                    <div style="background:var(--grey); height:200px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">[IMG Crecimiento]</div>
-                    <div style="padding:1.5rem;">
+                <!-- Case 1: Crecimiento Real -->
+                <div class="case-card" style="background:var(--grey); padding:2rem; border-radius:var(--radius-md);">
+                    <div style="width:100%; height:200px; background:var(--dark-grey); border-radius:var(--radius-md); margin-bottom:1.5rem; overflow:hidden;">
+                        <img src="IMAGES/1618413101-GettyImages-1304484820.jpg" alt="Crecimiento Real" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div>
                         <h4>Crecimiento Real</h4>
                         <p>De 0 a 100k seguidores en 6 meses para marca de moda.</p>
                     </div>
                 </div>
-                <div class="case-card">
-                    <div style="background:var(--grey); height:200px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">[IMG Prensa]</div>
-                    <div style="padding:1.5rem;">
+                <div class="case-card" style="background:var(--grey); padding:2rem; border-radius:var(--radius-md);">
+                    <div style="width:100%; height:200px; background:var(--dark-grey); border-radius:var(--radius-md); margin-bottom:1.5rem; overflow:hidden;">
+                        <img src="IMAGES/5ec55e5e66f9b__980x549.webp" alt="Prensa Internacional" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div>
                         <h4>Prensa Internacional</h4>
                         <p>Cobertura en Forbes y Entrepreneur para startup tech.</p>
                     </div>
                 </div>
-                <div class="case-card">
-                    <div style="background:var(--grey); height:200px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center;">[IMG Verificación]</div>
-                    <div style="padding:1.5rem;">
+                <div class="case-card" style="background:var(--grey); padding:2rem; border-radius:var(--radius-md);">
+                    <div style="width:100%; height:200px; background:var(--dark-grey); border-radius:var(--radius-md); margin-bottom:1.5rem; overflow:hidden;">
+                        <img src="IMAGES/Instagram-cómo-conseguir-el-check-azul-de-cuenta-verificada-.jpg" alt="Verificación" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div>
                         <h4>Verificación</h4>
                         <p>Check azul obtenido para artista internacional.</p>
                     </div>
@@ -236,23 +242,23 @@
 
         <!-- (8) TECNOLOGÍA / BOOST AI -->
         <section class="tech section-padding" id="tech" style="padding: 6rem 0;">
-            <div style="background:var(--black); color:var(--white); padding:4rem; border-radius:var(--radius-lg); display:flex; align-items:center; gap:4rem;">
-                <div style="flex:1;">
-                    <h3 class="text-gradient" style="font-size:2.5rem; margin-bottom:1rem;">Boost AI Technology</h3>
-                    <p style="margin-bottom:2rem; font-size:1.1rem; color:#ccc;">Nuestra IA propietaria analiza tendencias en tiempo real para optimizar tu contenido y maximizar el alcance orgánico. Deja de adivinar y empieza a crecer con datos.</p>
-                    <ul style="list-style:none; margin-bottom:2rem;">
-                        <li style="margin-bottom:0.5rem;">✅ Análisis predictivo de tendencias</li>
-                        <li style="margin-bottom:0.5rem;">✅ Optimización de hashtags automática</li>
-                        <li style="margin-bottom:0.5rem;">✅ Reportes de rendimiento en vivo</li>
+            <div style="background:var(--black); color:var(--white); padding:4rem; border-radius:var(--radius-lg);">
+            <div class="boost-content" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+                <div class="boost-text">
+                    <h4 style="font-size:2rem; margin-bottom:1rem;">Boost AI Technology</h4>
+                    <p style="margin-bottom:1.5rem; line-height:1.8;">Nuestra herramienta exclusiva de IA que automatiza campañas, optimiza audiencias y maximiza resultados 24/7.</p>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem;">
+                        <li>✅ Automatización inteligente</li>
+                        <li>✅ Análisis predictivo</li>
+                        <li>✅ Optimización continua</li>
                     </ul>
-                    <a href="#contact" class="hero_button" style="background:var(--white); color:var(--black); border:none;">Descubrir Boost AI</a>
                 </div>
-                <div style="flex:1;">
-                    <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:var(--radius-md); height:300px; display:flex; align-items:center; justify-content:center;">
-                        [AI Dashboard Mockup]
-```
+                <div class="boost-image">
+                    <div style="width:100%; height:400px; background:var(--dark-grey); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                        <img src="IMAGES/Untitled-design-30.png" alt="Boost AI Technology" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -264,7 +270,109 @@
             </div>
             
             <div class="faq-container">
-                <!-- FAQ items will be added by JavaScript to keep HTML cleaner -->
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What is Viral International?" data-es="¿Qué es Viral International?">
+                        ¿Qué es Viral International?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Viral International is a digital marketing agency with a global presence, specialized in organic growth, brand positioning, account verification, international press, branding, AI applied to marketing and comprehensive services for creators, businesses and hotels." data-es="Viral International es una agencia de marketing digital con presencia global, especializada en crecimiento orgánico, posicionamiento de marcas, verificación de cuentas, prensa internacional, branding, IA aplicada al marketing y servicios integrales para creadores, empresas y hoteles.">
+                            Viral International es una agencia de marketing digital con presencia global, especializada en crecimiento orgánico, posicionamiento de marcas, verificación de cuentas, prensa internacional, branding, IA aplicada al marketing y servicios integrales para creadores, empresas y hoteles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What services do you offer?" data-es="¿Qué servicios ofrecen?">
+                        ¿Qué servicios ofrecen?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="We offer a complete ecosystem of digital services: Organic growth, Engagement, Account verification, International press, Community management, Graphic design, Branding, Boost AI, Reputation management, Wikipedia, Hotel services and more." data-es="Ofrecemos un ecosistema completo de servicios digitales: Crecimiento orgánico, Engagement, Verificación de cuentas, Notas de prensa, Community management, Diseño gráfico, Branding, Boost AI, Gestión de reputación, Wikipedia, Servicios para hoteles y más.">
+                            Ofrecemos un ecosistema completo de servicios digitales: Crecimiento orgánico, Engagement, Verificación de cuentas, Notas de prensa, Community management, Diseño gráfico, Branding, Boost AI, Gestión de reputación, Wikipedia, Servicios para hoteles y más.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="Do you work with any country?" data-es="¿Trabajan con cualquier país?">
+                        ¿Trabajan con cualquier país?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes. Viral International operates globally. We have clients in America, Europe, the Middle East and Asia." data-es="Sí. Viral International opera de forma global. Contamos con clientes en América, Europa, Medio Oriente y Asia.">
+                            Sí. Viral International opera de forma global. Contamos con clientes en América, Europa, Medio Oriente y Asia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="How do you guarantee results?" data-es="¿Cómo garantizan resultados?">
+                        ¿Cómo garantizan resultados?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Our processes are based on metrics, proven strategies and automation tools. Each service includes clear KPIs and continuous reports." data-es="Nuestros procesos se basan en métricas, estrategias comprobadas y herramientas de automatización. Cada servicio incluye KPIs claros y reportes continuos.">
+                            Nuestros procesos se basan en métricas, estrategias comprobadas y herramientas de automatización. Cada servicio incluye KPIs claros y reportes continuos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="How long does it take to see results?" data-es="¿Cuánto tiempo demora ver resultados?">
+                        ¿Cuánto tiempo demora ver resultados?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="It depends on the service: Organic growth (7-30 days), Engagement (24-48h), Verification (15-45 days), Press (48-72h), Branding (3-10 days), Boost AI (72h)." data-es="Depende del servicio: Crecimiento orgánico (7-30 días), Engagement (24-48h), Verificación (15-45 días), Prensa (48-72h), Branding (3-10 días), Boost AI (72h).">
+                            Depende del servicio: Crecimiento orgánico (7-30 días), Engagement (24-48h), Verificación (15-45 días), Prensa (48-72h), Branding (3-10 días), Boost AI (72h).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What is Boost AI?" data-es="¿Qué es Boost AI?">
+                        ¿Qué es Boost AI?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Boost AI is our exclusive tool that integrates artificial intelligence and automation to increase reach, improve engagement, optimize audiences and boost campaigns 24/7." data-es="Boost AI es nuestra herramienta exclusiva que integra inteligencia artificial y automatización para aumentar alcance, mejorar engagement, optimizar audiencias y potenciar campañas 24/7.">
+                            Boost AI es nuestra herramienta exclusiva que integra inteligencia artificial y automatización para aumentar alcance, mejorar engagement, optimizar audiencias y potenciar campañas 24/7.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="Can you really verify accounts?" data-es="¿Realmente pueden verificar cuentas?">
+                        ¿Realmente pueden verificar cuentas?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes, we work with official processes based on verifiable press, online reputation and profile optimization. We do not sell fake verifications." data-es="Sí, trabajamos con procesos oficiales basados en prensa verificable, reputación online y optimización del perfil. No vendemos verificaciones falsas.">
+                            Sí, trabajamos con procesos oficiales basados en prensa verificable, reputación online y optimización del perfil. No vendemos verificaciones falsas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What payment methods do you accept?" data-es="¿Qué métodos de pago aceptan?">
+                        ¿Qué métodos de pago aceptan?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Bank transfers, Credit cards, PayPal, Selected cryptocurrencies, Wise or Payoneer." data-es="Transferencias bancarias, Tarjetas de crédito, PayPal, Criptomonedas seleccionadas, Wise o Payoneer.">
+                            Transferencias bancarias, Tarjetas de crédito, PayPal, Criptomonedas seleccionadas, Wise o Payoneer.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -378,7 +486,7 @@
                     <div class="footer_social_icons" style="display:flex; flex-direction:column; gap:0.5rem;">
                         <a href="#" target="_blank">Instagram</a>
                         <a href="#" target="_blank">LinkedIn</a>
-                        <a href="https://wa.me/" target="_blank">WhatsApp</a>
+                        <a href="https://wa.me/5491130652655" target="_blank">WhatsApp</a>
                     </div>
                 </div>
             </div>

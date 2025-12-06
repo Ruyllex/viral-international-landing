@@ -164,81 +164,203 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log('Initialization complete');
 
-  /* FAQ ACCORDION */
-  const faqData = [
-    {
-      q_es: "¿Qué es Viral International?",
-      q_en: "What is Viral International?",
-      a_es: "Viral International es una agencia de marketing digital con presencia global, especializada en crecimiento orgánico, posicionamiento de marcas, verificación de cuentas, prensa internacional, branding, IA aplicada al marketing y servicios integrales para creadores, empresas y hoteles. Nuestro enfoque combina estrategias probadas con tecnología avanzada para ofrecer resultados reales y medibles.",
-      a_en: "Viral International is a digital marketing agency with a global presence, specialized in organic growth, brand positioning, account verification, international press, branding, AI applied to marketing and comprehensive services for creators, businesses and hotels. Our approach combines proven strategies with advanced technology to deliver real, measurable results."
-    },
-    {
-      q_es: "¿Qué servicios ofrecen?",
-      q_en: "What services do you offer?",
-      a_es: "Ofrecemos un ecosistema completo de servicios digitales: Crecimiento orgánico, Engagement, Verificación de cuentas, Notas de prensa internacionales, Community management, Diseño gráfico y edición de reels, Branding, Boost AI, Gestión de reputación, Wikipedia, Servicios para hoteles y más.",
-      a_en: "We offer a complete ecosystem of digital services: Organic growth, Engagement, Account verification, International press releases, Community management, Graphic design and reels editing, Branding, Boost AI, Reputation management, Wikipedia, Hotel services and more."
-    },
-    {
-      q_es: "¿Trabajan con cualquier país?",
-      q_en: "Do you work with any country?",
-      a_es: "Sí. Viral International opera de forma global. Contamos con clientes en América, Europa, Medio Oriente y Asia. Todos los servicios son digitales y se pueden implementar desde cualquier parte del mundo.",
-      a_en: "Yes. Viral International operates globally. We have clients in America, Europe, the Middle East and Asia. All services are digital and can be implemented from anywhere in the world."
-    },
-    {
-      q_es: "¿Cómo garantizan resultados?",
-      q_en: "How do you guarantee results?",
-      a_es: "Nuestros procesos se basan en métricas, estrategias comprobadas y herramientas internas de automatización. Cada servicio incluye KPIs claros, seguimiento semanal o mensual, reportes y acceso directo al equipo asignado para asegurar resultados consistentes.",
-      a_en: "Our processes are based on metrics, proven strategies and internal automation tools. Each service includes clear KPIs, weekly or monthly tracking, reports and direct access to the assigned team to ensure consistent results."
-    },
-    {
-      q_es: "¿Cuánto tiempo demora ver resultados?",
-      q_en: "How long does it take to see results?",
-      a_es: "Depende del servicio: Crecimiento orgánico (7-30 días), Engagement (24-48h), Verificación (15-45 días), Notas de prensa (48-72h), Branding (3-10 días), Boost AI (72h).",
-      a_en: "It depends on the service: Organic growth (7-30 days), Engagement (24-48h), Verification (15-45 days), Press releases (48-72h), Branding (3-10 days), Boost AI (72h)."
-    },
-    {
-      q_es: "¿Qué es Boost AI?",
-      q_en: "What is Boost AI?",
-      a_es: "Boost AI es una herramienta exclusiva desarrollada por Viral International que integra inteligencia artificial y automatización para: aumentar alcance, mejorar engagement, optimizar audiencias, crear funnels automatizados y potenciar campañas 24/7. Es una ventaja competitiva que no ofrecen otras agencias tradicionales.",
-      a_en: "Boost AI is an exclusive tool developed by Viral International that integrates artificial intelligence and automation to: increase reach, improve engagement, optimize audiences, create automated funnels, and boost campaigns 24/7. It is a competitive advantage that other traditional agencies do not offer."
-    },
-    {
-      q_es: "¿Realmente pueden verificar cuentas?",
-      q_en: "Can you really verify accounts?",
-      a_es: "Sí, trabajamos con procesos oficiales basados en prensa verificable, reputación online, optimización del perfil y cumplimiento de los requisitos de cada plataforma. No vendemos verificaciones falsas ni métodos no permitidos.",
-      a_en: "Yes, we work with official processes based on verifiable press, online reputation, profile optimization and compliance with each platform's requirements. We do not sell fake verifications or unauthorized methods."
-    },
-    {
-      q_es: "¿Qué métodos de pago aceptan?",
-      q_en: "What payment methods do you accept?",
-      a_es: "Transferencias bancarias, Tarjetas de crédito, PayPal, Criptomonedas seleccionadas, Pago internacional vía Wise o Payoneer.",
-      a_en: "Bank transfers, Credit cards, PayPal, Selected cryptocurrencies, International payment via Wise or Payoneer."
+  /* FAQ ACCORDION - Click handlers */
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement;
+      faqItem.classList.toggle('active');
+    });
+  });
+
+  /* SCROLL REVEAL ANIMATIONS */
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Optional: unobserve after reveal for performance
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with animation classes
+  const animatedElements = document.querySelectorAll(
+    '.scroll-reveal, .fade-in-left, .fade-in-right, .scale-up, .stagger-children'
+  );
+  
+  animatedElements.forEach(el => observer.observe(el));
+
+  console.log(`Observing ${animatedElements.length} animated elements`);
+
+  /* GSAP SCROLL ANIMATIONS */
+  // Check if GSAP and ScrollTrigger are loaded
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    console.log('GSAP ScrollTrigger initialized');
+
+    // Animate section headers
+    gsap.utils.toArray('.section-header').forEach((header) => {
+      gsap.fromTo(header, 
+        { y: 50, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out'
+        }
+      );
+    });
+
+    // Animate service boxes with stagger
+    gsap.fromTo('.service-box',
+      { y: 60, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '.services-grid',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out'
+      }
+    );
+
+    // Animate stats with counter effect
+    gsap.utils.toArray('.stat-item').forEach((stat) => {
+      gsap.fromTo(stat,
+        { scale: 0.8, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: stat,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'back.out(1.7)'
+        }
+      );
+    });
+
+    // Animate plan cards
+    gsap.fromTo('.plan-card',
+      { y: 80, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '.plans-grid',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: 'power3.out'
+      }
+    );
+
+    // Animate FAQ items
+    gsap.fromTo('.faq-item',
+      { x: -50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '.faq-container',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out'
+      }
+    );
+
+    // Animate about content
+    gsap.fromTo('.about-text',
+      { x: -80, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '.about-content',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out'
+      }
+    );
+
+    gsap.fromTo('.about-image',
+      { x: 80, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '.about-content',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out'
+      }
+    );
+
+    // Animate contact form
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      gsap.fromTo(contactForm,
+        { y: 50, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: contactForm,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out'
+        }
+      );
     }
-  ];
 
-  const faqContainer = document.querySelector('.faq-container');
-  if (faqContainer) {
-    faqData.forEach((faq, index) => {
-      const faqItem = document.createElement('div');
-      faqItem.className = 'faq-item';
-      faqItem.innerHTML = `
-        <div class="faq-question" data-en="${faq.q_en}" data-es="${faq.q_es}">
-          ${faq.q_es}
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p data-en="${faq.a_en}" data-es="${faq.a_es}">${faq.a_es}</p>
-        </div>
-      `;
-      faqContainer.appendChild(faqItem);
-    });
+    // Animate footer
+    const footerContent = document.querySelector('footer .footer_content');
+    if (footerContent) {
+      gsap.fromTo(footerContent,
+        { y: 40, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: 'footer',
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power2.out'
+        }
+      );
+    }
 
-    // Add click handlers
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        faqItem.classList.toggle('active');
-      });
-    });
+    console.log('GSAP animations applied to all sections');
+  } else {
+    console.warn('GSAP or ScrollTrigger not loaded, using fallback animations');
   }
 });

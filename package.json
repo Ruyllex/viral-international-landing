@@ -1,0 +1,9 @@
+{
+  "name": "viral-international-landing",
+  "version": "1.0.0",
+  "description": "Viral International - Global Digital Marketing Agency",
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "build": "echo 'Static site - no build needed'"
+  }
+}
