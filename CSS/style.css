@@ -265,9 +265,22 @@ main {
 }
 
 .client_row img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.1);
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+}
+
+/* Dark mode improvements for client logos */
+body.dark-mode .client_row img {
+  filter: grayscale(20%) brightness(1.2) !important;
+  opacity: 0.95 !important;
+  transition: all 0.3s ease !important;
+}
+
+body.dark-mode .client_row img:hover {
+  filter: grayscale(0%) brightness(1.3) !important;
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
 }
 
 @keyframes scroll {
