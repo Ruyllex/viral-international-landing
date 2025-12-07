@@ -1181,7 +1181,11 @@ body.dark-mode section p { color: #e5e5e5; }
 }
 
 body.dark-mode .results.section-padding {
-  background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+  background: transparent !important;
+}
+
+body.dark-mode .results {
+  background: transparent !important;
 }
 
 .results .section-header p {
@@ -1189,7 +1193,11 @@ body.dark-mode .results.section-padding {
 }
 
 body.dark-mode .results .section-header p {
-  color: #ccc;
+  color: #ccc !important;
+}
+
+body.dark-mode .results .section-header h3 {
+  color: #ffffff !important;
 }
 
 .results .result-card {
@@ -1198,8 +1206,9 @@ body.dark-mode .results .section-header p {
 }
 
 body.dark-mode .results .result-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(30, 30, 30, 0.8) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  backdrop-filter: blur(10px);
 }
 
 .results .result-card h4 {
@@ -1207,7 +1216,7 @@ body.dark-mode .results .result-card {
 }
 
 body.dark-mode .results .result-card h4 {
-  color: #fff;
+  color: #fff !important;
 }
 
 .results .result-card p {
@@ -1215,7 +1224,7 @@ body.dark-mode .results .result-card h4 {
 }
 
 body.dark-mode .results .result-card p {
-  color: #999;
+  color: #bbb !important;
 }
 
 .result-card:hover {
@@ -1224,8 +1233,9 @@ body.dark-mode .results .result-card p {
 }
 
 body.dark-mode .result-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.2);
+  background: rgba(40, 40, 40, 0.9) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
 }
 
 .result-card img {
@@ -1234,6 +1244,42 @@ body.dark-mode .result-card:hover {
 
 .result-card:hover img {
   transform: scale(1.05);
+}
+
+/* Force dark mode for result cards with higher specificity */
+body.dark-mode .results .result-card,
+body.dark-mode .result-card {
+  background: rgba(30, 30, 30, 0.9) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode .results .result-card h4,
+body.dark-mode .result-card h4 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .results .result-card p,
+body.dark-mode .result-card p {
+  color: #bbbbbb !important;
+}
+
+body.dark-mode .results .result-card:hover,
+body.dark-mode .result-card:hover {
+  background: rgba(40, 40, 40, 0.95) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+}
+
+/* Dark mode for carousel arrows in results section */
+body.dark-mode .carousel-btn {
+  background: rgba(40, 40, 40, 0.9) !important;
+  border: 2px solid rgba(255,255,255,0.3) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .carousel-btn:hover {
+  background: rgba(127, 0, 255, 0.8) !important;
+  border-color: var(--violet) !important;
 }
 
 /* --- Instagram Cards --- */
