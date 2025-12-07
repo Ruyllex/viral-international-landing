@@ -377,9 +377,92 @@ document.addEventListener('DOMContentLoaded', function() {
       );
     }
 
+    // Animate Instagram cards
+    gsap.fromTo('.instagram-card',
+      { y: 60, opacity: 0, scale: 0.9 },
+      {
+        scrollTrigger: {
+          trigger: '.instagram-grid',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'back.out(1.2)'
+      }
+    );
+
     console.log('GSAP animations applied to all sections');
   } else {
     console.warn('GSAP or ScrollTrigger not loaded, using fallback animations');
+  }
+
+  /* RESULTS CAROUSEL AUTO-ROTATION */
+  const resultsCarousel = document.getElementById('resultsCarousel');
+  if (resultsCarousel) {
+    let autoScrollInterval;
+    let isPaused = false;
+    const scrollAmount = 370; // Width of one card + gap
+    const autoScrollDelay = 4000; // 4 seconds between scrolls
+    
+    function startAutoScroll() {
+      if (!isPaused) {
+        autoScrollInterval = setInterval(() => {
+          const maxScroll = resultsCarousel.scrollWidth - resultsCarousel.clientWidth;
+          
+          if (resultsCarousel.scrollLeft >= maxScroll - 10) {
+            // Reached the end, scroll back to start
+            resultsCarousel.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+            });
+          } else {
+            // Scroll to next card
+            resultsCarousel.scrollBy({
+              left: scrollAmount,
+              behavior: 'smooth'
+            });
+          }
+        }, autoScrollDelay);
+      }
+    }
+    
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+    
+    // Pause on hover
+    resultsCarousel.addEventListener('mouseenter', () => {
+      isPaused = true;
+      stopAutoScroll();
+    });
+    
+    resultsCarousel.addEventListener('mouseleave', () => {
+      isPaused = false;
+      startAutoScroll();
+    });
+    
+    // Pause when user manually scrolls
+    let manualScrollTimeout;
+    resultsCarousel.addEventListener('scroll', () => {
+      isPaused = true;
+      stopAutoScroll();
+      
+      // Resume auto-scroll after 3 seconds of inactivity
+      clearTimeout(manualScrollTimeout);
+      manualScrollTimeout = setTimeout(() => {
+        isPaused = false;
+        startAutoScroll();
+      }, 3000);
+    });
+    
+    // Start auto-scroll after page load
+    setTimeout(startAutoScroll, 2000);
+    
+    console.log('Results carousel auto-rotation enabled');
   }
 });
 

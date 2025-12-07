@@ -1,0 +1,10 @@
+/* Results Section Hover Effects */
+.result-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+.result-card {
+  transition: all 0.3s ease;
+}

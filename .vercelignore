@@ -1,0 +1,8 @@
+.git
+node_modules
+.DS_Store
+*.log
+.env
+.vercel
+faq-section.html
+COMO_LEVANTAR_SERVIDOR.md

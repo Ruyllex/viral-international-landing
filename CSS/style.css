@@ -1173,3 +1173,162 @@ body.dark-mode .hero p,
 body.dark-mode .hero_left p { color: #f0f0f0 !important; }
 
 body.dark-mode section p { color: #e5e5e5; }
+
+
+/* Results Section - Light/Dark Mode Support */
+.results.section-padding {
+  background: var(--white);
+}
+
+body.dark-mode .results.section-padding {
+  background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+}
+
+.results .section-header p {
+  color: #666;
+}
+
+body.dark-mode .results .section-header p {
+  color: #ccc;
+}
+
+.results .result-card {
+  background: var(--white);
+  border: 1px solid #e0e0e0;
+}
+
+body.dark-mode .results .result-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.results .result-card h4 {
+  color: var(--black);
+}
+
+body.dark-mode .results .result-card h4 {
+  color: #fff;
+}
+
+.results .result-card p {
+  color: #666;
+}
+
+body.dark-mode .results .result-card p {
+  color: #999;
+}
+
+.result-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+body.dark-mode .result-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.result-card img {
+  transition: transform 0.5s ease;
+}
+
+.result-card:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Instagram Cards --- */
+.instagram-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--violet), var(--cyan));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.instagram-card:hover::before {
+  transform: scaleX(1);
+}
+
+.instagram-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: var(--violet);
+}
+
+body.dark-mode .instagram-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .instagram-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.instagram-card img {
+  transition: transform 0.3s ease;
+}
+
+.instagram-card:hover img {
+  transform: scale(1.1);
+}
+
+.instagram-card h4 {
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+body.dark-mode .instagram-card h4 {
+  color: #fff;
+}
+
+.instagram-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .instagram-card p {
+  color: #999;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive for Instagram cards */
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .instagram-card {
+    padding: 1.5rem;
+  }
+  
+  .instagram-card img {
+    width: 100px;
+    height: 100px;
+  }
+}
